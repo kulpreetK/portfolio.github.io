@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kulpreet Kaur | Logo & Visual Identity Designer</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <!-- Custom Tailwind Configuration -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        playfair: ['Playfair Display', 'serif'],
+                    },
+                    colors: {
+                        'elvare-cream': '#F5F2E8',
+                        'elvare-rose': '#D46376',
+                        'elvare-green': '#193630',
+                        'nudge-blue': '#4566B3',
+                        'brand-brown': '#6A4A3C',
+                        'brand-espresso': '#1F1815',
+                        'brand-sand': '#F4EBE1'
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Custom Styles & Keyframe Animations -->
+    <style>
+        body { 
+            background-color: #fafafa; 
+            color: #111111; 
+        }
+        
+        /* Navigation Underline Hover Effect */
+        .nav-link { 
+            position: relative; 
+        }
+        .nav-link::after {
+            content: ''; 
+            position: absolute; 
+            width: 0; 
+            height: 1px; 
+            bottom: -2px; 
+            left: 0;
+            background-color: currentColor; 
+            transition: width 0.3s ease;
+        }
+        .nav-link:hover::after { 
+            width: 100%; 
+        }
+
+        /* Gallery Card Hover Animations */
+        .gallery-card { 
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); 
+        }
+        .gallery-card:hover { 
+            transform: translateY(-8px); 
+            box-shadow: 0 20px 40px -10px rgba(0,0,0,0.12); 
+        }
+        
+        /* Scroll Triggered Reveal Animations */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 1s cubic-bezier(0.16, 1, 0.3, 1), transform 1s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .reveal.active { 
+            opacity: 1; 
+            transform: translateY(0); 
+        }
+        .delay-100 { transition-delay: 100ms; }
+        .delay-200 { transition-delay: 200ms; }
+        .delay-300 { transition-delay: 300ms; }
+
+        /* Interactive Pillars Accordion-Style Expand */
+        .pillar-card { 
+            border-top: 1px solid rgba(0,0,0,0.1); 
+            transition: border-color 0.3s ease; 
+        }
+        .pillar-card:hover { 
+            border-top-color: rgba(0,0,0,0.8); 
+        }
+        .pillar-content { 
+            max-height: 0; 
+            opacity: 0; 
+            overflow: hidden; 
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1); 
+        }
+        .pillar-card:hover .pillar-content { 
+            max-height: 150px; 
+            opacity: 1; 
+            padding-top: 1rem; 
+        }
+    </style>
+</head>
+<body class="font-sans antialiased selection:bg-elvare-rose selection:text-white">
+
+    <!-- Navigation Bar -->
+    <nav class="fixed w-full z-50 mix-blend-difference text-white px-6 py-8">
+        <div class="container mx-auto flex justify-between items-center max-w-7xl">
+            <a href="#" class="text-xl font-medium tracking-tight hover:opacity-80 transition-opacity">Kulpreet Kaur</a>
+            <div class="hidden md:flex gap-8 text-sm tracking-wide">
+                <a href="#work" class="nav-link">Work</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#gallery" class="nav-link">Archive</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="relative h-screen flex flex-col justify-center px-6 overflow-hidden">
+        <!-- Fullscreen Background Image with Dark Gradient Overlay -->
+        <div class="absolute inset-0 z-0">
+            <img 
+                src="01a16f1a-2a65-76b1-b4ae-5292131e2e7f.webp" 
+                alt="Visual Studio Desk Atmosphere" 
+                class="w-full h-full object-cover object-center filter brightness-[0.45] contrast-105" 
+                onerror="this.src='https://placehold.co/1920x1080/1F1815/D46376?text=Hero+Background'"
+            >
+            <div class="absolute inset-0 bg-gradient-to-t from-brand-espresso via-brand-espresso/40 to-transparent"></div>
+            <div class="absolute inset-0 bg-gradient-to-r from-brand-espresso/70 via-transparent to-brand-espresso/30"></div>
+        </div>
+
+        <div class="container mx-auto max-w-7xl relative z-10 text-white">
+            <div class="max-w-4xl reveal active">
+                <span class="inline-block px-4 py-1.5 rounded-full border border-elvare-rose/40 text-xs font-mono tracking-[0.25em] uppercase text-elvare-rose bg-black/40 backdrop-blur-md mb-8">
+                    • Logo & Visual Identity Designer
+                </span>
+                <h1 class="font-playfair text-6xl md:text-8xl lg:text-9xl leading-[0.9] tracking-tight mb-8">
+                    Visual <br> <span class="text-transparent bg-clip-text bg-gradient-to-r from-white via-gray-200 to-elvare-rose/80">Identities.</span>
+                </h1>
+                <p class="text-xl md:text-2xl text-gray-300 max-w-xl font-light leading-relaxed">
+                    Crafting meaningful, minimalist, and memorable logo design solutions and complete brand systems.
+                </p>
+            </div>
+        </div>
+        <div class="absolute bottom-12 left-6 md:left-1/2 md:-translate-x-1/2 z-10 animate-bounce">
+            <a href="#work" aria-label="Scroll to Work">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-white/70">
+                    <path d="M12 5v14M19 12l-7 7-7-7"/>
+                </svg>
+            </a>
+        </div>
+    </header>
+
+    <!-- Featured Projects (#work) -->
+    <section id="work" class="py-24 bg-white">
+        
+        <!-- Project 1: Elvare -->
+        <div class="min-h-screen flex items-center py-20 bg-elvare-cream text-elvare-green reveal">
+            <div class="container mx-auto px-6 max-w-7xl">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+                    
+                    <!-- Logo Showcase Card -->
+                    <div class="lg:col-span-5 flex flex-col items-center justify-center p-12 bg-white/60 rounded-3xl min-h-[400px] shadow-sm border border-elvare-rose/10">
+                        <img 
+                            src="elvare-logo.jpg" 
+                            alt="Elvare Logo" 
+                            class="w-full max-w-sm h-auto object-contain transform transition duration-700 hover:scale-105" 
+                            onerror="this.src='https://placehold.co/400x600/F5F2E8/D46376?text=Elvare+Logo'"
+                        >
+                    </div>
+
+                    <!-- Brand Story & Details -->
+                    <div class="lg:col-span-7 space-y-10">
+                        <div>
+                            <span class="text-xs uppercase tracking-[0.2em] font-mono text-brand-brown/80 block mb-3">Identity Showcase</span>
+                            <h2 class="font-playfair text-5xl md:text-7xl mb-6">Elvare</h2>
+                            <p class="text-xl font-medium tracking-wide uppercase text-elvare-rose mb-6">
+                                Calm • Grounded • Elegant • Organic • Pure
+                            </p>
+                            <p class="text-lg leading-relaxed opacity-90 max-w-2xl text-brand-espresso">
+                                Elvare is a conceptual sustainable cosmetic brand inspired by nature’s grounding energy. It celebrates simplicity, mindfulness, and purity; inviting users to slow down and reconnect with themselves. Every detail of Elvare reflects calmness and care, rooted in natural harmony.
+                            </p>
+                        </div>
+
+                        <!-- Vision & Mission Cards -->
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 pt-8 border-t border-elvare-green/15">
+                            <div class="bg-white/60 p-8 rounded-2xl border border-brand-brown/10">
+                                <h3 class="font-playfair text-2xl mb-3 text-elvare-rose">Vision</h3>
+                                <p class="leading-relaxed opacity-80 text-brand-espresso">To redefine beauty as a ritual of calm and connection to nature.</p>
+                            </div>
+                            <div class="bg-white/60 p-8 rounded-2xl border border-brand-brown/10">
+                                <h3 class="font-playfair text-2xl mb-3 text-elvare-rose">Mission</h3>
+                                <p class="leading-relaxed opacity-80 text-brand-espresso">To craft pure, sustainable skincare experiences that nurture both the skin and the planet.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Project 2: Nudge -->
+        <div class="min-h-screen flex items-center py-20 bg-nudge-blue text-white reveal relative overflow-hidden">
+            <div class="absolute -right-20 -top-20 w-96 h-96 bg-elvare-rose/20 rounded-full filter blur-3xl pointer-events-none"></div>
+            <div class="container mx-auto px-6 max-w-5xl text-center relative z-10">
+                <div class="flex justify-center mb-8">
+                    <img 
+                        src="Vector.png" 
+                        alt="Nudge Icon" 
+                        class="w-24 md:w-36 h-auto drop-shadow-md transform transition duration-500 hover:scale-110" 
+                        onerror="this.src='https://placehold.co/150/FF8A8A/FFFFFF?text=Vector'"
+                    >
+                </div>
+                <h2 class="text-6xl md:text-8xl font-bold tracking-tight mb-4">Nudge</h2>
+                <h3 class="text-2xl font-light text-blue-100 mb-8">The Intelligent Health & Fitness Companion</h3>
+                <p class="text-xl leading-relaxed font-light max-w-3xl mx-auto mb-8 text-blue-50/90">
+                    Nudge is an all-in-one health and daily habit-tracking application designed to act as a supportive sidekick for personal wellness. Rather than feeling like an intimidating tracking tool, Nudge focuses on gentle accountability through clear metrics, automated schedule tracking, and unobtrusive reminders.
+                </p>
+                <p class="text-lg text-blue-200 italic font-playfair">
+                    "Yourself to your fullest"
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section (#about) -->
+    <section id="about" class="py-32 md:py-48 bg-white border-t border-gray-100 overflow-hidden">
+        <div class="container mx-auto px-6 max-w-7xl">
+            <div class="max-w-4xl mx-auto reveal">
+                <span class="text-xs uppercase tracking-[0.25em] font-mono text-brand-brown mb-4 block">Psychology & Visual Perception</span>
+                <h2 class="font-playfair text-5xl md:text-7xl leading-[1.1] mb-10 text-brand-espresso">
+                    More than<br>what meets<br><span class="italic text-elvare-rose">the eye.</span>
+                </h2>
+                
+                <div class="space-y-6 text-gray-600 font-sans text-xl leading-relaxed font-light max-w-2xl">
+                    <p>
+                        I'm fascinated by the relationship between how people think, what they feel, and what they see. With a background in psychology and an interest in visual design, I explore how forms, structural balance, and core symbolism influence the way we perceive and connect with brands.
+                    </p>
+                    <p>
+                        I enjoy finding meaning in the simplest of forms, experimenting with visual symbolism and turning ideas into identities. For me, a logo isn't just something people look at—it's a mark that should be instantly recognized, remembered, and felt.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Three Pillars of Psychology in Design -->
+            <div class="mt-32 grid grid-cols-1 md:grid-cols-3 gap-16 md:gap-8 reveal delay-300">
+                
+                <!-- Pillar 1: Perception -->
+                <div class="pillar-card pt-8 cursor-default group">
+                    <div class="flex justify-between items-end mb-6">
+                        <div>
+                            <span class="text-xs font-mono uppercase tracking-widest text-nudge-blue block mb-1">Cognitive Structure</span>
+                            <h3 class="font-playfair text-3xl">Perception</h3>
+                        </div>
+                        <span class="text-sm font-sans text-gray-400 group-hover:text-nudge-blue transition-colors">01</span>
+                    </div>
+                    <div class="w-16 h-16 mb-6 relative">
+                        <div class="absolute inset-0 border-2 border-nudge-blue rounded-full transform -translate-x-2 transition-transform group-hover:translate-x-0"></div>
+                        <div class="absolute inset-0 border-2 border-nudge-blue rounded-full transform translate-x-2 transition-transform group-hover:translate-x-0 group-hover:bg-nudge-blue"></div>
+                    </div>
+                    <div class="pillar-content font-sans text-gray-600 font-light leading-relaxed">
+                        <p>How the human brain naturally interprets shapes, patterns, and visual information, connecting structural gaps to find core meaning.</p>
+                    </div>
+                </div>
+
+                <!-- Pillar 2: Emotion -->
+                <div class="pillar-card pt-8 cursor-default group">
+                    <div class="flex justify-between items-end mb-6">
+                        <div>
+                            <span class="text-xs font-mono uppercase tracking-widest text-elvare-rose block mb-1">Emotional Resonance</span>
+                            <h3 class="font-playfair text-3xl">Emotion</h3>
+                        </div>
+                        <span class="text-sm font-sans text-gray-400 group-hover:text-elvare-rose transition-colors">02</span>
+                    </div>
+                    <div class="w-16 h-16 mb-6 relative overflow-hidden">
+                        <div class="w-full h-full bg-elvare-rose/20 transform scale-y-50 origin-bottom transition-transform duration-500 group-hover:scale-y-100 group-hover:bg-elvare-rose"></div>
+                    </div>
+                    <div class="pillar-content font-sans text-gray-600 font-light leading-relaxed">
+                        <p>How deliberate color harmonies, weight, and visual forms trigger subconscious emotional responses and lasting brand trust.</p>
+                    </div>
+                </div>
+
+                <!-- Pillar 3: Memory -->
+                <div class="pillar-card pt-8 cursor-default group">
+                    <div class="flex justify-between items-end mb-6">
+                        <div>
+                            <span class="text-xs font-mono uppercase tracking-widest text-brand-brown block mb-1">Visual Recall</span>
+                            <h3 class="font-playfair text-3xl">Memory</h3>
+                        </div>
+                        <span class="text-sm font-sans text-gray-400 group-hover:text-brand-brown transition-colors">03</span>
+                    </div>
+                    <div class="w-16 h-16 mb-6 flex gap-1">
+                        <div class="w-1/3 h-full bg-brand-brown opacity-20 transition-opacity duration-300 group-hover:opacity-100"></div>
+                        <div class="w-1/3 h-full bg-brand-brown opacity-50 transition-opacity duration-500 group-hover:opacity-100 delay-75"></div>
+                        <div class="w-1/3 h-full bg-brand-brown opacity-100"></div>
+                    </div>
+                    <div class="pillar-content font-sans text-gray-600 font-light leading-relaxed">
+                        <p>How radical simplicity and clear geometric symbolism allow a mark to stay distinct and effortlessly recallable.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Perception & Process Showcase -->
+            <div class="mt-40 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center reveal">
+                <div class="lg:col-span-6">
+                    <div class="relative overflow-hidden rounded-2xl shadow-xl">
+                        <img 
+                            src="b34cdcc35cb40ebe99a9ca6b30878b72.jpg" 
+                            alt="Perception & Process Visual" 
+                            class="w-full h-auto object-cover transform transition duration-700 hover:scale-105" 
+                            onerror="this.src='https://placehold.co/600x600/F4EBE1/6A4A3C?text=Perception+Visual'"
+                        >
+                    </div>
+                </div>
+                <div class="lg:col-span-6 space-y-6">
+                    <span class="text-xs uppercase tracking-[0.2em] font-mono text-brand-brown">Design Process & Methodology</span>
+                    <h3 class="font-playfair text-4xl leading-tight">Decoding Visual Identity Through Analysis</h3>
+                    <p class="text-gray-600 leading-relaxed font-light">
+                        Every logo design begins with an investigation into identity, perspective, and hidden meanings. By dissecting brand requirements through psychological principles, I craft visual symbols that speak directly to the viewer's subconscious.
+                    </p>
+                    <div class="bg-brand-sand p-6 rounded-xl space-y-4 text-sm font-medium border border-brand-brown/10">
+                        <div class="flex items-center gap-3">
+                            <span class="w-2.5 h-2.5 rounded-full bg-nudge-blue"></span>
+                            <span class="text-gray-800">Visual Inquiry: Exploring audience perception and market positioning.</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <span class="w-2.5 h-2.5 rounded-full bg-elvare-rose"></span>
+                            <span class="text-gray-800">Symbolic Reduction: Translating complex brand stories into essential forms.</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <span class="w-2.5 h-2.5 rounded-full bg-brand-brown"></span>
+                            <span class="text-gray-800">Identity Crafting: Delivering distinctive marks built for long-term recognition.</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Closing Statement -->
+            <div class="mt-40 text-center reveal">
+                <div class="w-12 h-12 border border-brand-brown mx-auto mb-10 transform rotate-45 transition-transform duration-1000 hover:rotate-180"></div>
+                <h3 class="font-playfair text-4xl md:text-5xl lg:text-6xl leading-tight">
+                    Good design catches the eye.<br>
+                    <span class="italic text-gray-500">Meaningful design stays in the mind.</span>
+                </h3>
+            </div>
+        </div>
+    </section>
+
+    <!-- Archive / Logo Gallery Grid (#gallery) -->
+    <section id="gallery" class="py-24 bg-[#fafafa]">
+        <div class="container mx-auto px-6 max-w-7xl">
+            <div class="mb-16 reveal">
+                <span class="text-xs font-mono uppercase tracking-widest text-brand-brown block mb-2">Portfolio Directory</span>
+                <h2 class="font-playfair text-4xl md:text-5xl mb-4">Archive</h2>
+                <p class="text-gray-500">A curated collection of logo identities and brand marks.</p>
+            </div>
+
+            <!-- 10 Responsive Logo Cards -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Frame 1 -->
+                <div class="gallery-card bg-white p-8 rounded-2xl relative group overflow-hidden border border-gray-100 aspect-square flex items-center justify-center reveal">
+                    <img src="Frame 1.png" alt="NEXIT Construction" class="w-3/4 h-auto object-contain transition duration-500 group-hover:scale-95 group-hover:opacity-30" onerror="this.src='https://placehold.co/300x300/FFFFFF/000000?text=Frame+1'">
+                    <div class="absolute inset-0 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition duration-500 p-6 text-center bg-white/95">
+                        <span class="text-[10px] font-mono tracking-widest uppercase px-3 py-1 bg-brand-espresso text-white rounded-full mb-3">Architecture & Construction</span>
+                        <h4 class="font-playfair text-2xl mb-1">NEXIT</h4>
+                        <p class="text-xs tracking-widest uppercase text-gray-500">Construction Ltd.</p>
+                    </div>
+                </div>
+
+                <!-- Frame 2 -->
+                <div class="gallery-card bg-white p-8 rounded-2xl relative group overflow-hidden border border-gray-100 aspect-square flex items-center justify-center reveal delay-100">
+                    <img src="Frame 2.png" alt="Pamela Learning Centre" class="w-3/4 h-auto object-contain transition duration-500 group-hover:scale-95 group-hover:opacity-30" onerror="this.src='https://placehold.co/300x300/FFFFFF/000000?text=Frame+2'">
+                    <div class="absolute inset-0 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition duration-500 p-6 text-center bg-white/95">
+                        <span class="text-[10px] font-mono tracking-widest uppercase px-3 py-1 bg-nudge-blue text-white rounded-full mb-3">Educational Institute</span>
+                        <h4 class="font-playfair text-2xl mb-1">Pamela</h4>
+                        <p class="text-xs tracking-widest uppercase text-gray-500">Learning Centre</p>
+                    </div>
+                </div>
+
+                <!-- Frame 3 -->
+                <div class="gallery-card bg-white p-8 rounded-2xl relative group overflow-hidden border border-gray-100 aspect-square flex items-center justify-center reveal delay-200">
+                    <img src="Frame 3.png" alt="ZINA Logistics" class="w-3/4 h-auto object-contain transition duration-500 group-hover:scale-95 group-hover:opacity-30" onerror="this.src='https://placehold.co/300x300/FFFFFF/000000?text=Frame+3'">
+                    <div class="absolute inset-0 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition duration-500 p-6 text-center bg-white/95">
+                        <span class="text-[10px] font-mono tracking-widest uppercase px-3 py-1 bg-brand-brown text-white rounded-full mb-3">Logistics & Supply</span>
+                        <h4 class="font-playfair text-2xl mb-1">ZINA</h4>
+                        <p class="text-xs tracking-widest uppercase text-gray-500">Logistics Ltd.</p>
+                    </div>
+                </div>
+
+                <!-- Frame 4 -->
+                <div class="gallery-card bg-white p-8 rounded-2xl relative group overflow-hidden border border-gray-100 aspect-square flex items-center justify-center reveal">
+                    <img src="Frame 4.png" alt="FirmFoundation Academy" class="w-3/4 h-auto object-contain transition duration-500 group-hover:scale-95 group-hover:opacity-30" onerror="this.src='https://placehold.co/300x300/FFFFFF/000000?text=Frame+4'">
+                    <div class="absolute inset-0 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition duration-500 p-6 text-center bg-white/95">
+                        <span class="text-[10px] font-mono tracking-widest uppercase px-3 py-1 bg-nudge-blue text-white rounded-full mb-3">Academic Academy</span>
+                        <h4 class="font-playfair text-2xl mb-1">FirmFoundation</h4>
+                        <p class="text-xs tracking-widest uppercase text-gray-500">Academy</p>
+                    </div>
+                </div>
+
+                <!-- Frame 5 -->
+                <div class="gallery-card bg-white p-8 rounded-2xl relative group overflow-hidden border border-gray-100 aspect-square flex items-center justify-center reveal delay-100">
+                    <img src="Frame 5.png" alt="YoungStars Football Club" class="w-3/4 h-auto object-contain transition duration-500 group-hover:scale-95 group-hover:opacity-30" onerror="this.src='https://placehold.co/300x300/FFFFFF/000000?text=Frame+5'">
+                    <div class="absolute inset-0 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition duration-500 p-6 text-center bg-white/95">
+                        <span class="text-[10px] font-mono tracking-widest uppercase px-3 py-1 bg-elvare-green text-white rounded-full mb-3">Sports Organisation</span>
+                        <h4 class="font-playfair text-2xl mb-1">YoungStars</h4>
+                        <p class="text-xs tracking-widest uppercase text-gray-500">Football Club</p>
+                    </div>
+                </div>
+
+                <!-- Frame 6 -->
+                <div class="gallery-card bg-white p-8 rounded-2xl relative group overflow-hidden border border-gray-100 aspect-square flex items-center justify-center reveal delay-200">
+                    <img src="Frame 6.png" alt="Bakers Kitchen" class="w-3/4 h-auto object-contain transition duration-500 group-hover:scale-95 group-hover:opacity-30" onerror="this.src='https://placehold.co/300x300/FFFFFF/000000?text=Frame+6'">
+                    <div class="absolute inset-0 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition duration-500 p-6 text-center bg-white/95">
+                        <span class="text-[10px] font-mono tracking-widest uppercase px-3 py-1 bg-brand-brown text-white rounded-full mb-3">Culinary & Bakery</span>
+                        <h4 class="font-playfair text-2xl mb-1">Bakers</h4>
+                        <p class="text-xs tracking-widest uppercase text-gray-500">Kitchen</p>
+                    </div>
+                </div>
+
+                <!-- Frame 7 -->
+                <div class="gallery-card bg-white p-8 rounded-2xl relative group overflow-hidden border border-gray-100 aspect-square flex items-center justify-center reveal">
+                    <img src="Frame 7.png" alt="Aunty Didi's Kitchen" class="w-3/4 h-auto object-contain transition duration-500 group-hover:scale-95 group-hover:opacity-30" onerror="this.src='https://placehold.co/300x300/FFFFFF/000000?text=Frame+7'">
+                    <div class="absolute inset-0 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition duration-500 p-6 text-center bg-white/95">
+                        <span class="text-[10px] font-mono tracking-widest uppercase px-3 py-1 bg-elvare-rose text-white rounded-full mb-3">Hospitality & Food</span>
+                        <h4 class="font-playfair text-2xl mb-1">Aunty Didi's</h4>
+                        <p class="text-xs tracking-widest uppercase text-gray-500">Kitchen</p>
+                    </div>
+                </div>
+
+                <!-- Frame 8 -->
+                <div class="gallery-card bg-white p-8 rounded-2xl relative group overflow-hidden border border-gray-100 aspect-square flex items-center justify-center reveal delay-100">
+                    <img src="Frame 8.png" alt="Ipetex Studios" class="w-3/4 h-auto object-contain transition duration-500 group-hover:scale-95 group-hover:opacity-30" onerror="this.src='https://placehold.co/300x300/FFFFFF/000000?text=Frame+8'">
+                    <div class="absolute inset-0 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition duration-500 p-6 text-center bg-white/95">
+                        <span class="text-[10px] font-mono tracking-widest uppercase px-3 py-1 bg-brand-espresso text-white rounded-full mb-3">Photography & Media</span>
+                        <h4 class="font-playfair text-2xl mb-1">Ipetex</h4>
+                        <p class="text-xs tracking-widest uppercase text-gray-500">Studios</p>
+                    </div>
+                </div>
+
+                <!-- Frame 9 -->
+                <div class="gallery-card bg-white p-8 rounded-2xl relative group overflow-hidden border border-gray-100 aspect-square flex items-center justify-center reveal delay-200">
+                    <img src="Frame 9.png" alt="Limelight News" class="w-3/4 h-auto object-contain transition duration-500 group-hover:scale-95 group-hover:opacity-30" onerror="this.src='https://placehold.co/300x300/FFFFFF/000000?text=Frame+9'">
+                    <div class="absolute inset-0 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition duration-500 p-6 text-center bg-white/95">
+                        <span class="text-[10px] font-mono tracking-widest uppercase px-3 py-1 bg-elvare-rose text-white rounded-full mb-3">Editorial Publishing</span>
+                        <h4 class="font-playfair text-2xl mb-1">Limelight</h4>
+                        <p class="text-xs tracking-widest uppercase text-gray-500">News</p>
+                    </div>
+                </div>
+
+                <!-- Frame 10 -->
+                <div class="gallery-card bg-white p-8 rounded-2xl relative group overflow-hidden border border-gray-100 aspect-square flex items-center justify-center reveal sm:col-span-2 lg:col-span-1">
+                    <img src="Frame 10.png" alt="StarTimes" class="w-3/4 h-auto object-contain transition duration-500 group-hover:scale-95 group-hover:opacity-30" onerror="this.src='https://placehold.co/300x300/FFFFFF/000000?text=Frame+10'">
+                    <div class="absolute inset-0 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition duration-500 p-6 text-center bg-white/95">
+                        <span class="text-[10px] font-mono tracking-widest uppercase px-3 py-1 bg-nudge-blue text-white rounded-full mb-3">Global Broadcast</span>
+                        <h4 class="font-playfair text-2xl mb-1">StarTimes</h4>
+                        <p class="text-xs tracking-widest uppercase text-gray-500">Bringing the World Closer</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer / Contact (#contact) -->
+    <footer id="contact" class="bg-brand-espresso text-white py-32 relative overflow-hidden">
+        <div class="absolute -left-20 -bottom-20 w-96 h-96 bg-elvare-rose/10 rounded-full filter blur-3xl pointer-events-none"></div>
+        <div class="container mx-auto px-6 max-w-7xl relative z-10">
+            <div class="max-w-4xl reveal">
+                <h2 class="font-playfair text-5xl md:text-7xl mb-8">Let's build something <span class="italic text-elvare-rose">memorable.</span></h2>
+                <p class="text-xl text-gray-400 mb-12 font-light">Available for logo design, brand identity systems, and visual strategic collaborations.</p>
+                <a href="mailto:kulpreetkaur1509@gmail.com" class="inline-block border-b border-elvare-rose/60 pb-2 text-xl md:text-2xl hover:text-elvare-rose transition-colors">
+                    kulpreetkaur1509@gmail.com
+                </a>
+            </div>
+            <div class="mt-32 pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center text-sm text-gray-400">
+                <p>&copy; 2026 Kulpreet Kaur. All rights reserved.</p>
+                <div class="flex gap-6 mt-4 md:mt-0">
+                    <a href="https://www.linkedin.com/in/kulpreet-kaur-8a87732b0" target="_blank" rel="noopener noreferrer" class="hover:text-nudge-blue transition-colors">LinkedIn</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll Observer Script for Fade Diffs -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.15
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.reveal').forEach((element) => {
+                observer.observe(element);
+            });
+        });
+    </script>
+</body>
+</html>
